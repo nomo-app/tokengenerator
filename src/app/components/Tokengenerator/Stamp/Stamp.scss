@@ -1,0 +1,28 @@
+.stamp {
+  background: url('../../../../../assets/stamp.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  width: 400px;
+  animation: stamp 1s 0.5s forwards ease-in-out;
+  transform: translateY(-2000px) translateZ(250px);
+  z-index: 20;
+  .image {
+    position: absolute;
+    height: 180px;
+    aspect-ratio: 1 / 1;
+    left: 50%;
+    top: 3%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes stamp {
+  0% {
+    transform: translateY(-2000px) translateZ(250px);;
+  }
+  50% {
+    transform: translateY(-150px) translateZ(250px);;
+  }
+}
