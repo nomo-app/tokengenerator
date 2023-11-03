@@ -1,6 +1,6 @@
 {
   "nomo_manifest_version": "1.0.0",
-  "plugin_id": "com.nomo.tokengenerator",
+  "plugin_id": "app.nomo.tokens",
   "plugin_name": "Token Generator",
   "plugin_version": "1.0.0",
   "dependencies": [],
