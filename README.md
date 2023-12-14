@@ -1,7 +1,7 @@
-Plugin can be installed by generating a qr-code from the following link: https://tokens.nomo.app?t=nomo
+# Tokengenerator WebOn
 
-This demo-plugin is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-You can use nextjs for your NOMO-plugin, but please feel free to use any other JavaScript-framework as well.
+This WebOn allows users to easily create tokens with arbitrary names.
+It is written in next.js-React.
 
 ## Getting Started
 
