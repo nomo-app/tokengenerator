@@ -6,7 +6,7 @@ import {TokenSubmission} from "../../_functions/buildQRCode";
 import {TopBar} from "./TopBar/TopBar";
 import {Form} from "./Form/Form";
 import Loader from "./Loader/Loader";
-import { injectNomoCSSVariables } from "nomo-plugin-kit/dist/nomo_theming";
+import { injectNomoCSSVariables } from "nomo-webon-kit/dist/nomo_theming";
 export type Phase = 'initial' | 'transaction_wait' | 'token'
 
 export const TokenGeneratorContext = React.createContext({

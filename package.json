@@ -17,10 +17,11 @@
     "@types/react-dom": "18.2.4",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
-    "ethers": "5.5.4",
-    "ethersjs-nomo-plugins": "^0.1.1",
+    "ethers": "^6.9.2",
+    "ethersjs-nomo-webons": "^0.2.3",
     "next": "13.4.3",
-    "nomo-plugin-kit": "^0.1.3",
+    "nomo-webon-cli": "^0.1.7",
+    "nomo-webon-kit": "^0.1.23",
     "react": "18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "18.2.0",
@@ -34,5 +35,10 @@
     "@types/string-similarity": "^4.0.0",
     "typedoc": "0.24.7",
     "typedoc-plugin-markdown": "3.15.3"
-  }
+  },
+  "description": "This WebOn allows users to easily create tokens with arbitrary names. It is written in next.js-React.",
+  "version": "1.0.0",
+  "main": "next.config.js",
+  "author": "",
+  "license": "ISC"
 }

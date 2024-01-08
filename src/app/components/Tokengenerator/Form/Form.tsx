@@ -5,7 +5,7 @@ import {validateFormData} from "../validateFormData";
 import {ABORT_GENERATION_ERROR, ids, localStoragePrefix, UNKNOWN_ERROR} from "../../../_constants/constants";
 import {TokenSubmission} from "../../../_functions/buildQRCode";
 import {TokenGeneratorContext} from "../Tokengenerator";
-import {nomoGetWalletAddresses} from "nomo-plugin-kit/dist/nomo_api";
+import {nomoGetWalletAddresses} from "nomo-webon-kit";
 import {estimateGenerateToken, generateToken} from "../../../_functions/generateToken";
 import {FormError} from "../../../_functions/Error/FormError";
 
