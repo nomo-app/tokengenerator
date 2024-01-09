@@ -78,7 +78,6 @@ export const Form = () => {
             setTokenAddress(address)
             setPhase('token')
         } catch (e: any) {
-            // console.log(e)
             setPhase('initial')
             if (e instanceof Error) {
                 setError((e as Error)?.message ?? UNKNOWN_ERROR)

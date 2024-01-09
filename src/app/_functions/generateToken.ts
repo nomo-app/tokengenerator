@@ -1,8 +1,8 @@
 import { TokenSubmission } from "./buildQRCode";
 import { ethers } from "ethers";
 import { generatorAbi } from "./generatorAbi";
-import { EthersjsNomoSigner } from "ethersjs-nomo-webons/dist/ethersjs_nomo_signer";
-import { zscProvider } from "ethersjs-nomo-webons/dist/ethersjs_provider";
+import { EthersjsNomoSigner } from "ethersjs-nomo-webons";
+import { zscSigner, zscProvider } from "ethersjs-nomo-webons";
 import { TOO_LITTLE_BALANCE_ERROR } from "../_constants/constants";
 
 export type TokenData = TokenSubmission & {
@@ -19,16 +19,18 @@ export async function generateToken(props: TokenData): Promise<string> {
 
   const tx = await generator.generateToken(
     to,
-    BigInt(amount),
+    ethers.getBigInt(amount),
     name,
     symbol,
     mintable,
     0
   );
   const receipt = await tx.wait();
+  console.log("RECEIPT" + receipt);
 
   let tokenAddress: string = "";
-  for (const e of receipt.events) {
+  const events = receipt.events ?? [];
+  for (const e of events) {
     if (e.event === "NewToken") {
       tokenAddress = e.args.token;
     }
@@ -43,11 +45,12 @@ export async function estimateGenerateToken(props: TokenData) {
   const signer = new EthersjsNomoSigner(zscProvider);
   const generator = new ethers.Contract(generatorAddress, generatorAbi, signer);
 
-  const balance = await zscProvider.getBalance(await signer.getAddress());
+  const ownAddress = await zscSigner.getAddress();
+  const accountBalance = await zscProvider.getBalance(ownAddress);
 
   // console.log('GasEstimate:', ethers.utils.formatUnits(gasEstimate, "ether"))
   // console.log('Balance:', ethers.utils.formatUnits(balance, "ether"))
-  if (balance <= 0) {
+  if (accountBalance <= 0) {
     // nomo.injectQRCode({qrCode: 'https://faucet.nomo.app/?t=nomo', navigateBack: false})
     throw new Error(TOO_LITTLE_BALANCE_ERROR);
   }
