@@ -15,6 +15,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+Your webon deeplink is:
+https://nomo.app/webon/w.nomo.app/tokengenerator/nomo.tar.gz
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
