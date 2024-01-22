@@ -5,9 +5,15 @@ import Script from "next/script";
 import "../../globals.css";
 import './page.scss'
 import {Tokengenerator} from "./components/Tokengenerator/Tokengenerator";
-import React from "react";
+import React, { useEffect } from "react";
+import { nomo } from "nomo-webon-kit";
 
 export default function Home() {
+  useEffect(() => {
+    nomo.registerOnWebOnVisible((_args: { cardMode: boolean }) => {
+      nomo.checkForWebOnUpdate();
+    });
+  }, []);
   return <>
     <Head>
       <link rel="shortcut icon" href={"./favicon.ico"} />
