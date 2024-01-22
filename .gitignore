@@ -3,3 +3,6 @@
 node_modules/
 /scripts
 /out
+/cache
+nomo.tar.gz
+.DS_Store
