@@ -6,7 +6,7 @@
     "start": "npx serve@latest out",
     "lint": "next lint",
     "generate_docs": "typedoc --plugin typedoc-plugin-markdown --out ../api-docs/ src/app/nomo-plugin-kit/nomo_api.ts && rm ../api-docs/README.md",
-    "deploy": "npm run build && nomo-webon-cli build out && nomo-webon-cli deploy nomo.tar.gz production",
+    "deploy": "nomo-webon-cli bumpVersion public/nomo_manifest.json && npm run build && nomo-webon-cli build out && nomo-webon-cli deploy nomo.tar.gz production",
     "clear:cache": "./scripts/clear_cloudflare_cache.sh"
   },
   "dependencies": {
@@ -18,7 +18,7 @@
     "ethers": "^6.9.2",
     "ethersjs-nomo-webons": "^0.2.3",
     "next": "13.4.3",
-    "nomo-webon-cli": "^0.1.7",
+    "nomo-webon-cli": "^0.1.9",
     "nomo-webon-kit": "^0.1.23",
     "react": "18.2.0",
     "react-device-detect": "^2.2.3",

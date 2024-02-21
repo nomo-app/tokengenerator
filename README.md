@@ -19,7 +19,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 For deployment use the NOMO WebOn Cli tool: https://www.npmjs.com/package/nomo-webon-cli?activeTab=readme
 
-Deployment link: https://nomo.app/webon/w.nomo.app/tokengenerator/nomo.tar.gz
+Deployment link: https://nomo.app/webon/tokengenerator.nomo.zone
 
 ## Learn More
 
