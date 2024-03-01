@@ -4,6 +4,7 @@ import { generatorAbi } from "./generatorAbi";
 import { EthersjsNomoSigner } from "ethersjs-nomo-webons";
 import { zscSigner, zscProvider } from "ethersjs-nomo-webons";
 import { TOO_LITTLE_BALANCE_ERROR } from "../_constants/constants";
+import { nomo } from "nomo-webon-kit";
 
 export type TokenData = TokenSubmission & {
   to: string;
@@ -26,16 +27,26 @@ export async function generateToken(props: TokenData): Promise<string> {
     0
   );
   const receipt = await tx.wait();
-  console.log("RECEIPT" + receipt);
+  console.log("RECEIPT", receipt);
 
   let tokenAddress: string = "";
-  const events = receipt.events ?? [];
-  for (const e of events) {
-    if (e.event === "NewToken") {
-      tokenAddress = e.args.token;
+  const logs = receipt.logs ?? [];
+  for (const log of logs) {
+    if (log?.fragment?.name === "NewToken") {
+      tokenAddress = log.args[0];
     }
   }
 
+  if (tokenAddress && tokenAddress.startsWith("0x")) {
+    nomo.addCustomToken({ // do not await for this dialog
+      contractAddress: tokenAddress,
+      symbol,
+      name,
+      network: "zeniq-smart-chain",
+    });
+  } else {
+    console.error("Found no token address in receipt logs", logs);
+  }
   return tokenAddress;
 }
 
