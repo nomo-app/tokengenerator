@@ -19,7 +19,7 @@ export const banned_symbol_names = [
 ] as const
 
 export const UNKNOWN_ERROR = 'An unknown error has occured. Please try with different data!'
-export const TOO_LITTLE_BALANCE_ERROR = 'It seems you have too little balance for creating a token. Make sure to get free Zeniq Token via the Zeniq Faucet Plugin'
+export const TOO_LITTLE_BALANCE_ERROR = 'It seems you have too little balance for creating a token. Make sure to get free Zeniq Token via the Zeniq Faucet WebOn'
 export const ABORT_GENERATION_ERROR = 'It seems you did not authorize the transaction for generating your token.'
 
 export const localStoragePrefix = 'nomo_tg_'

@@ -29,8 +29,16 @@ export function CoinContainer(props: TokenData) {
             <div className={`coin-container phase-${phase}`}>
                 <div className="name">{name}</div>
                 <div className="token">
-                    <div className='qr-code'>
-                        <QRCode value={`${name}/${symbol}/${contractAddress}/tokengenerator`}/>
+                    <div style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        textAlign: "center",
+                        }}>
+                        <div>{`Name: ${name}`}</div>
+                        <div>{`Symbol: ${symbol}`}</div>
+                        <div>{`Contract address: ${contractAddress}`}</div>
                     </div>
                     <audio ref={soundRef} id={'coin-sound'} style={{display: 'none'}} controls>
                         <source src={coinSoundPath} type="audio/wav"/>
