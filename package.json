@@ -19,7 +19,7 @@
     "ethersjs-nomo-webons": "^0.2.3",
     "next": "13.4.3",
     "nomo-webon-cli": "^0.1.9",
-    "nomo-webon-kit": "^0.1.23",
+    "nomo-webon-kit": "^0.1.31",
     "react": "18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "18.2.0",
