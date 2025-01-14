@@ -10,7 +10,7 @@ import { nomo } from "nomo-webon-kit";
 
 export default function Home() {
   useEffect(() => {
-    nomo.registerOnWebOnVisible((_args: { cardMode: boolean }) => {
+    nomo.registerOnWebOnVisible(() => {
       nomo.checkForWebOnUpdate();
     });
   }, []);
